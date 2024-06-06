@@ -1,4 +1,4 @@
-import { Container, VStack, Heading, Input, Button, List, ListItem, Checkbox, IconButton, HStack, Text } from "@chakra-ui/react";
+import { Container, VStack, Heading, Input, Button, List, ListItem, Checkbox, IconButton, HStack, Text, Box, Flex, Link } from "@chakra-ui/react";
 import { FaTrash } from "react-icons/fa";
 import { useState } from "react";
 
@@ -56,8 +56,22 @@ const Index = () => {
           ))}
         </List>
       </VStack>
+      <Footer />
     </Container>
   );
 };
+
+const Footer = () => (
+  <Box as="footer" py={4} bg="gray.800" color="white" mt={10}>
+    <Flex direction={{ base: "column", md: "row" }} justify="space-between" align="center" maxW="container.md" mx="auto" px={4}>
+      <Text mb={{ base: 2, md: 0 }}>© {new Date().getFullYear()} Todo App. All rights reserved.</Text>
+      <Flex>
+        <Link href="/" mx={2}>Home</Link>
+        <Link href="/about" mx={2}>About</Link>
+        <Link href="/contact" mx={2}>Contact</Link>
+      </Flex>
+    </Flex>
+  </Box>
+);
 
 export default Index;
